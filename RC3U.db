@@ -1,0 +1,120 @@
+record (bi, "$(P)ReadContSensor")
+		{
+			field(DESC, "Read control sensor")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadContSensor $(PORT)")
+			field(SCAN, "1 second")
+		}
+		
+record (ai, "$(P)ReadsetTemp_read")
+		{
+			field(DESC, "Read Set Temperature")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadsetTemp_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadsetTemp")
+		}
+		
+record (calc, "$(P)ReadsetTemp")
+		{
+			field(INPA,"$(P)ReadsetTemp_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+		}
+		
+record (ai, "$(P)ReadsupTemp_read")
+		{
+			field(DESC, "Read Supply Temperature")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadsupTemp_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadsupTemp")
+		}
+		
+record (calc, "$(P)ReadsupTemp")
+		{
+			field(INPA,"$(P)ReadsupTemp_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+		}
+		
+record (ai, "$(P)ReadRetTemp_read")
+		{
+			field(DESC, "Read return Temperature")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadRetTemp_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadRetTemp")
+		}
+		
+record (calc, "$(P)ReadRetTemp")
+		{
+			field(INPA, "$(P)ReadRetTemp_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+		}
+
+record (ai, "$(P)ReadAmbTemp_read")
+		{
+			field(DESC, "Read Ambient Temperature")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadAmbTemp_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadAmbTemp")
+		}
+		
+record (calc, "$(P)ReadAmbTemp")
+		{
+			field(INPA,"$(P)ReadAmbTemp_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+		}
+
+record (ai, "$(P)ReadProcFlow_read")
+		{
+			field(DESC, "Read Process Flow")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadProcFlow_read $(PORT)")
+			field(EGU, "lpm")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadProcFlow")
+		}
+		
+record (calc, "$(P)ReadProcFlow")
+		{
+			field(INPA,"$(P)ReadProcFlow_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "lpm")
+		}
+	
+
+
+record (bo, "$(P)SetChillerStatus")
+		{
+			field(DESC, "set chiller status")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto SetChillerStatus $(PORT)")
+			field(ZNAM, "Standby")
+			field(ONAM, "Run")
+		}
+		
+record (ao, "$(P)SetControlTemp_set")
+		{
+			field(DESC, "set control temperature")
+			field(DTYP, "stream")
+			field(OUT, "@RC3U.proto SetControlTemp_set $(PORT)")
+			field(EGU, "lpm")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)SetControlTemp")
+		}
+		
+record (calc, "$(P)SetControlTemp")
+		{
+			field(INPA,"$(P)SetControlTemp_set")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+		}
