@@ -1,0 +1,6 @@
+record(lsi, "$(user):RC3U:version") {
+    field(DTYP, "RC3U version")
+    field(DESC, "Version string")
+    field(SIZV, "$(SIZV=200)")
+    field(PINI, "YES")
+}
