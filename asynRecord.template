@@ -1,6 +1,0 @@
-file "$(ASYN)/db/asynRecord.db"
-{
-pattern
-{P          R         PORT    ADDR    OMAX  IMAX}
-{SLAC:RC3U:     asyn1   serial1    0     80  80}
-}
