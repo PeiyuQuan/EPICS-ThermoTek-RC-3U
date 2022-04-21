@@ -1,0 +1,673 @@
+
+file {
+	name="/home/quan/adls/RC3U.adl"
+	version=030117
+}
+display {
+	object {
+		x=2665
+		y=344
+		width=620
+		height=220
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+polyline {
+	object {
+		x=-1
+		y=24
+		width=620
+		height=3
+	}
+	"basic attribute" {
+		clr=30
+		width=2
+	}
+	points {
+		(0,26)
+		(618,25)
+	}
+}
+polyline {
+	object {
+		x=313
+		y=27
+		width=0
+		height=197
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(313,27)
+		(313,224)
+	}
+}
+composite {
+	object {
+		x=5
+		y=5
+		width=611
+		height=204
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=280
+				y=5
+				width=80
+				height=20
+			}
+			"basic attribute" {
+				clr=20
+			}
+			textix="Chiller"
+		}
+		text {
+			object {
+				x=335
+				y=36
+				width=100
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Pump status"
+		}
+		"text update" {
+			object {
+				x=450
+				y=35
+				width=130
+				height=20
+			}
+			monitor {
+				chan="$(P)pumpstatusflag"
+				clr=14
+				bclr=30
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=8
+				y=38
+				width=125
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Control status"
+		}
+		"text update" {
+			object {
+				x=140
+				y=35
+				width=130
+				height=20
+			}
+			monitor {
+				chan="$(P)controlstatusmode"
+				clr=14
+				bclr=30
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=5
+				y=85
+				width=125
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Control sensor"
+		}
+		"text update" {
+			object {
+				x=140
+				y=85
+				width=145
+				height=20
+			}
+			monitor {
+				chan="$(P)ReadContSensor"
+				clr=14
+				bclr=30
+			}
+			limits {
+			}
+		}
+		composite {
+			object {
+				x=325
+				y=85
+				width=288
+				height=50
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=571
+						y=97
+						width=42
+						height=20
+					}
+					"basic attribute" {
+						clr=20
+					}
+					textix="degC"
+				}
+				"text entry" {
+					object {
+						x=465
+						y=85
+						width=100
+						height=25
+					}
+					control {
+						chan="$(P)SetControlTemp"
+						clr=14
+						bclr=32
+					}
+					limits {
+					}
+				}
+				"text update" {
+					object {
+						x=467
+						y=115
+						width=98
+						height=20
+					}
+					monitor {
+						chan="$(P)ReadsetTemp"
+						clr=14
+						bclr=30
+					}
+					limits {
+					}
+				}
+				text {
+					object {
+						x=325
+						y=105
+						width=135
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Set temperature"
+				}
+			}
+		}
+		composite {
+			object {
+				x=15
+				y=60
+				width=255
+				height=20
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=15
+						y=61
+						width=110
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Alarm status"
+				}
+				"text update" {
+					object {
+						x=140
+						y=60
+						width=130
+						height=20
+					}
+					monitor {
+						chan="$(P)alarmstatusflag"
+						clr=14
+						bclr=30
+					}
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=320
+				y=60
+				width=260
+				height=20
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=320
+						y=60
+						width=130
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Warning status"
+				}
+				"text update" {
+					object {
+						x=450
+						y=60
+						width=130
+						height=20
+					}
+					monitor {
+						chan="$(P)warningstatusflag"
+						clr=14
+						bclr=30
+					}
+					limits {
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=15
+				y=105
+				width=293
+				height=31
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=40
+						y=105
+						width=60
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Supply"
+				}
+				text {
+					object {
+						x=15
+						y=121
+						width=100
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="temperature"
+				}
+				"text update" {
+					object {
+						x=119
+						y=110
+						width=146
+						height=20
+					}
+					monitor {
+						chan="$(P)ReadsupTemp"
+						clr=14
+						bclr=30
+					}
+					limits {
+					}
+				}
+				text {
+					object {
+						x=266
+						y=109
+						width=42
+						height=20
+					}
+					"basic attribute" {
+						clr=20
+					}
+					textix="degC"
+				}
+			}
+		}
+		composite {
+			object {
+				x=15
+				y=140
+				width=292
+				height=31
+			}
+			"composite name"=""
+			children {
+				text {
+					object {
+						x=44
+						y=140
+						width=60
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Return"
+				}
+				text {
+					object {
+						x=15
+						y=156
+						width=100
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="temperature"
+				}
+				"text update" {
+					object {
+						x=115
+						y=143
+						width=148
+						height=20
+					}
+					monitor {
+						chan="$(P)ReadRetTemp"
+						clr=14
+						bclr=30
+					}
+					limits {
+					}
+				}
+				text {
+					object {
+						x=265
+						y=144
+						width=42
+						height=20
+					}
+					"basic attribute" {
+						clr=20
+					}
+					textix="degC"
+				}
+			}
+		}
+		composite {
+			object {
+				x=322
+				y=140
+				width=294
+				height=69
+			}
+			"composite name"=""
+			children {
+				composite {
+					object {
+						x=322
+						y=140
+						width=293
+						height=31
+					}
+					"composite name"=""
+					children {
+						text {
+							object {
+								x=342
+								y=140
+								width=60
+								height=15
+							}
+							"basic attribute" {
+								clr=14
+							}
+							textix="Ambient"
+						}
+						text {
+							object {
+								x=322
+								y=156
+								width=100
+								height=15
+							}
+							"basic attribute" {
+								clr=14
+							}
+							textix="temperature"
+						}
+						"text update" {
+							object {
+								x=426
+								y=145
+								width=146
+								height=20
+							}
+							monitor {
+								chan="$(P)ReadAmbTemp"
+								clr=14
+								bclr=30
+							}
+							limits {
+							}
+						}
+						text {
+							object {
+								x=573
+								y=144
+								width=42
+								height=20
+							}
+							"basic attribute" {
+								clr=20
+							}
+							textix="degC"
+						}
+					}
+				}
+				text {
+					object {
+						x=574
+						y=182
+						width=42
+						height=20
+					}
+					"basic attribute" {
+						clr=20
+					}
+					textix="lpm"
+				}
+				composite {
+					object {
+						x=343
+						y=178
+						width=230
+						height=31
+					}
+					"composite name"=""
+					children {
+						text {
+							object {
+								x=343
+								y=178
+								width=60
+								height=15
+							}
+							"basic attribute" {
+								clr=14
+							}
+							textix="Process"
+						}
+						text {
+							object {
+								x=352
+								y=194
+								width=35
+								height=15
+							}
+							"basic attribute" {
+								clr=14
+							}
+							textix="Flow"
+						}
+						"text update" {
+							object {
+								x=427
+								y=183
+								width=146
+								height=20
+							}
+							monitor {
+								chan="$(P)ReadProcFlow"
+								clr=14
+								bclr=30
+							}
+							limits {
+							}
+						}
+					}
+				}
+			}
+		}
+		composite {
+			object {
+				x=15
+				y=180
+				width=282
+				height=25
+			}
+			"composite name"=""
+			children {
+				"choice button" {
+					object {
+						x=147
+						y=180
+						width=150
+						height=25
+					}
+					control {
+						chan="$(P)SetChillerStatus"
+						clr=14
+						bclr=25
+					}
+					stacking="column"
+				}
+				text {
+					object {
+						x=86
+						y=180
+						width=55
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Status"
+				}
+				text {
+					object {
+						x=15
+						y=180
+						width=60
+						height=15
+					}
+					"basic attribute" {
+						clr=14
+					}
+					textix="Chiller"
+				}
+			}
+		}
+	}
+}
