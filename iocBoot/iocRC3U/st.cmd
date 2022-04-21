@@ -23,15 +23,10 @@ asynSetOption("serial1",0,"baud","9600")
 asynSetOption("serial1",0,"bits","8")
 asynSetOption("serial1",0,"stop","1")
 asynSetOption("serial1",0,"parity","none")
-#asynSetOption("serial1",0,"clocal","Y")
 asynSetOption("serial1",0,"crtscts","N")
-#asynSetOption("serial1",0,"ixoff","N")
 asynSetOption("serial1",0,"ixon","Y")
 
-
-asynSetTraceIOMask("serial1",0,2)
-#asynSetTraceMask("serial1",0,9)
-#asynSetTraceIOMask("serial1",0,"ESCAPE")
+asynSetTraceIOMask("serial1",0,"ESCAPE")
 asynSetTraceMask("serial1",0,"ERROR|FLOW|DRIVER")
 
 
