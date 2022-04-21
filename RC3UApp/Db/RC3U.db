@@ -1,0 +1,187 @@
+#Watchdog
+
+record (mbbi, "$(P)controlstatusmode")
+		{
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto watchdog($(P)pumpstatusflag, $(P)alarmstatusflag, $(P)warningstatusflag) $(PORT)")
+			field(ZRVL, "0")
+			field(ONVL, "1")
+			field(TWVL, "2")
+			field(THVL, "3")
+			field(FRVL, "4")
+			field(ZRST, "Auto-start")
+			field(ONST, "Standby")
+			field(TWST, "Run")
+			field(THST, "Safety")
+			field(FRST, "Test")
+			field(SCAN, "1 second")
+		}
+
+
+
+record (bi, "$(P)pumpstatusflag")
+		{
+			field(DESC, "pump status flag")
+			field(ZNAM, "OFF")
+			field(ONAM, "ON")
+		}
+
+record (bi, "$(P)alarmstatusflag")
+		{
+			field(DESC, "alarm status flag")
+			field(ZNAM, "No Alarm")
+			field(ONAM, "Alarm present")
+		}
+		
+record (bi, "$(P)warningstatusflag")
+		{
+			field(DESC, "warning status flag")
+			field(ZNAM, "No warning")
+			field(ONAM, "Warning present")
+		}
+
+#read control sensor
+
+record (mbbi, "$(P)ReadContSensor")
+		{
+			field(DESC, "Read control sensor")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadContSensor $(PORT)")
+			field(ZRVL, "0")
+			field(ONVL, "1")
+			field(TWVL, "2")
+			field(THVL, "3")
+			field(ZRST, "Supply temp")
+			field(ONST, "return temp")
+			field(TWST, "Ext RTD")
+			field(THST, "External temrmistor")
+			field(SCAN, "1 second")
+		}
+
+
+#read set temperature
+		
+record (longin, "$(P)ReadsetTemp_read")
+		{
+			field(DESC, "Read Set Temperature")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadsetTemp_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadsetTemp")
+		}
+		
+record (calc, "$(P)ReadsetTemp")
+		{
+			field(INPA,"$(P)ReadsetTemp_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+		}
+
+#read supply temperature
+
+		
+record (longin, "$(P)ReadsupTemp_read")
+		{
+			field(DESC, "Read Supply Temperature")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadsupTemp_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadsupTemp")
+		}
+		
+record (calc, "$(P)ReadsupTemp")
+		{
+			field(INPA,"$(P)ReadsupTemp_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+			field(PREC, "1")
+		}
+
+#read return temperture
+		
+record (longin, "$(P)ReadRetTemp_read")
+		{
+			field(DESC, "Read return Temperature")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadRetTemp_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadRetTemp")
+		}
+		
+record (calc, "$(P)ReadRetTemp")
+		{
+			field(INPA, "$(P)ReadRetTemp_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+			field(PREC, "1")
+		}
+
+#read ambient temperature
+
+record (ai, "$(P)ReadAmbTemp_read")
+		{
+			field(DESC, "Read Ambient Temperature")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadAmbTemp_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadAmbTemp")
+		}
+		
+record (calc, "$(P)ReadAmbTemp")
+		{
+			field(INPA,"$(P)ReadAmbTemp_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+			field(PREC, "1")
+		}
+
+#read Process flow
+
+record (longin, "$(P)ReadProcFlow_read")
+		{
+			field(DESC, "Read Process Flow")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadProcFlow_read $(PORT)")
+			field(EGU, "lpm")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadProcFlow")
+		}
+		
+record (calc, "$(P)ReadProcFlow")
+		{
+			field(INPA,"$(P)ReadProcFlow_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "lpm")
+			field(PREC, "1")
+		}
+	
+
+# set chiller status
+
+record (bo, "$(P)SetChillerStatus")
+		{
+			field(DESC, "set chiller status")
+			field(DTYP, "stream")
+			field(OUT, "@RC3U.proto SetChillerStatus $(PORT)")
+			field(ZNAM, "Standby")
+			field(ONAM, "Run")
+		}
+
+#set control temperature
+		
+record (longout, "$(P)SetControlTemp")
+		{
+			field(DESC, "set control temperature")
+			field(DTYP, "stream")
+			field(OUT, "@RC3U.proto SetControlTemp $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+		}
+
+
+
+

@@ -1,0 +1,15 @@
+
+Terminator = CR;
+
+
+watchdog{out ".0101WatchDog%0<sum8>"; in "#01010WatchDog%1d%(\$1)1d%(\$2)1d%(\$3)1d%0<sum8>";}
+ReadContSensor {out ".0102rCtrlSen%0<sum8>"; in "#01020rCtrlSen%1d%0<sum8>";}
+ReadsetTemp_read {out ".0103rSetTemp%0<sum8>"; in "#01030rSetTemp%5d%0<sum8>";}
+ReadsupTemp_read {out ".0104rSupplyT%0<sum8>"; in "#01040rSupplyT%5d%0<sum8>";}
+ReadRetTemp_read {out ".0107rReturnT%0<sum8>"; in "#01070rReturnT%5d%0<sum8>";}
+ReadAmbTemp_read {out ".0108rAmbTemp%0<sum8>"; in "#01080rAmbTemp%5d%0<sum8>";}
+ReadProcFlow_read {out ".0109rProsFlo%0<sum8>"; in "#01090rProsFlo%5d%0<sum8>";}
+
+SetChillerStatus {out ".0115sStatus_%1.1d%0<sum8>"; in "#01150sStatus_%1d%0<sum8>";}
+SetControlTemp {out ".0117sCtrlT__%+4.4d%0<sum8>"; in "#01170sCtrlT__%+5d%0<sum8>";}
+
