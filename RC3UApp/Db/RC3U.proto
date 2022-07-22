@@ -20,11 +20,11 @@ SetLowSupTempWarn {out ".0122sLoSpTWn%+4.4d%0<sum8>"; in "#01220sLoSpTWn%+5d%0<s
 SetHiAmiTempWarn {out ".0123sHiAmTWn%+4.4d%0<sum8>"; in "#01230sHiAmTWn%+5d%0<sum8>";}
 SetLowAmiTempWarn {out ".0124sLoAmTWn%+4.4d%0<sum8>"; in "#01240sLoAmTWn%+5d%0<sum8>";}
 SetLowProFlowWarn {out ".0125sLoPFIWn%+4.4d%0<sum8>"; in "#01250sLoPFIWn%+5d%0<sum8>";}
-ReadHiSupTempWarn {out ".0134rHiSpTWn%0<sum8>"; in "#01340rHISpTWn%+5d%0<sum8>";}
-ReadLowSupTempWarn {out ".0135rLoSpTWn%0<sum8>"; in "#01350rLoSpTWn%+5d%0<sum8>";}
-ReadHiAmiTempWarn {out ".0136rHiAmTWn%0<sum8>"; in "#01360rHIAmTWn%+5d%0<sum8>";}
-ReadLowAmiTempWarn {out ".0137rLoAmTWn%0<sum8>"; in "#01370rLoAmTWn%+5d%0<sum8>";}
-ReadLowProFlowWarn {out ".0138rLoPFIWn%0<sum8>"; in "#01380rLoPFIWn%+5d%0<sum8>";}
+ReadHiSupTempWarn_read {out ".0134rHiSpTWn%0<sum8>"; in "#01340rHISpTWn%+5d%0<sum8>";}
+ReadLowSupTempWarn_read {out ".0135rLoSpTWn%0<sum8>"; in "#01350rLoSpTWn%+5d%0<sum8>";}
+ReadHiAmiTempWarn_read {out ".0136rHiAmTWn%0<sum8>"; in "#01360rHIAmTWn%+5d%0<sum8>";}
+ReadLowAmiTempWarn_read {out ".0137rLoAmTWn%0<sum8>"; in "#01370rLoAmTWn%+5d%0<sum8>";}
+ReadLowProFlowWarn_read {out ".0138rLoPFIWn%0<sum8>"; in "#01380rLoPFIWn%+5d%0<sum8>";}
 
 
 
