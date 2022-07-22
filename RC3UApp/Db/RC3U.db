@@ -183,5 +183,166 @@ record (longout, "$(P)SetControlTemp")
 		}
 
 
+#Set and Read warning
+#Set Hi Supply Temp Warn
+
+record (longout, "$(P)SetHiSupTempWarn")
+		{
+			field(DESC, "Set Hi supply tem warn")
+			field(DTYP, "stream")
+			field(OUT, "@RC3U.proto SetHiSupTempWarn $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+		}
+
+#Read Hi Supply Temp Warn
+record (longin, "$(P)ReadHiSupTempWarn_read")
+		{
+			field(DESC, "Read Hi supply tem warn")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadHiSupTempWarn_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadHiSupTempWarn")
+		}
+		
+record (calc, "$(P)ReadHiSupTempWarn")
+		{
+			field(INPA,"$(P)ReadHiSupTempWarn_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+			field(PREC, "1")
+		}
 
 
+#Set Low Supply Temp Warn
+
+record (longout, "$(P)SetLowSupTempWarn")
+		{
+			field(DESC, "Set Low supply tem warn")
+			field(DTYP, "stream")
+			field(OUT, "@RC3U.proto SetLowSupTempWarn $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+		}
+		
+
+#Read Low Supply Temp Warn
+record (longin, "$(P)ReadLowSupTempWarn_read")
+		{
+			field(DESC, "Read Low supply tem warn")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadLowSupTempWarn_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadLowSupTempWarn")
+		}
+		
+record (calc, "$(P)ReadLowSupTempWarn")
+		{
+			field(INPA,"$(P)ReadLowSupTempWarn_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+			field(PREC, "1")
+		}
+
+
+#Set High Ambient Temp Warn
+
+record (longout, "$(P)SetHiAmiTempWarn")
+		{
+			field(DESC, "Set Hi Ambient tem warn")
+			field(DTYP, "stream")
+			field(OUT, "@RC3U.proto SetHiAmiTempWarn $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+		}
+
+
+#Read High Ambient Temp Warn
+record (longin, "$(P)ReadHiAmiTempWarn_read")
+		{
+			field(DESC, "Read Hi Ambient tem warn")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadHiAmiTempWarn_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadHiAmiTempWarn")
+		}
+		
+record (calc, "$(P)ReadHiAmiTempWarn")
+		{
+			field(INPA,"$(P)ReadHiAmiTempWarn_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+			field(PREC, "1")
+		}
+		
+
+#Set Low Ambient Temp Warn
+
+record (longout, "$(P)SetLowAmiTempWarn")
+		{
+			field(DESC, "Set Low Ambient tem warn")
+			field(DTYP, "stream")
+			field(OUT, "@RC3U.proto SetLowAmiTempWarn $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+		}
+
+
+#Read Low Ambient Temp Warn
+record (longin, "$(P)ReadLowAmiTempWarn_read")
+		{
+			field(DESC, "Read Low Ambient tem warn")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadLowAmiTempWarn_read $(PORT)")
+			field(EGU, "degC")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadLowAmiTempWarn")
+		}
+		
+record (calc, "$(P)ReadLowAmiTempWarn")
+		{
+			field(INPA,"$(P)ReadLowAmiTempWarn_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "degC")
+			field(PREC, "1")
+		}
+
+
+
+
+#Set Low Process Flow Warn
+record (longout, "$(P)SetLowProFlowWarn")
+		{
+			field(DESC, "Set Low Process Flow warn")
+			field(DTYP, "stream")
+			field(OUT, "@RC3U.proto SetLowProFlowWarn $(PORT)")
+			field(EGU, "lpm")
+			field(SCAN, "1 second")
+		}
+
+
+#Read Low Process Flow Warn
+record (longin, "$(P)ReadLowProFlowWarn_read")
+		{
+			field(DESC, "Read Low Ambient tem warn")
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto ReadLowProFlowWarn_read $(PORT)")
+			field(EGU, "lpm")
+			field(SCAN, "1 second")
+			field(FLNK, "$(P)ReadLowProFlowWarn")
+		}
+		
+record (calc, "$(P)ReadLowProFlowWarn")
+		{
+			field(INPA,"$(P)ReadLowAmiTempWarn_read.VAL")
+			field(CALC, "A/10")
+			field(EGU, "lpm")
+			field(PREC, "1")
+		}
+		
+		
+		
+		
