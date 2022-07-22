@@ -13,3 +13,18 @@ ReadProcFlow_read {out ".0109rProsFlo%0<sum8>"; in "#01090rProsFlo%5d%0<sum8>";}
 SetChillerStatus {out ".0115sStatus_%1.1d%0<sum8>"; in "#01150sStatus_%1d%0<sum8>";}
 SetControlTemp {out ".0117sCtrlT__%+4.4d%0<sum8>"; in "#01170sCtrlT__%+5d%0<sum8>";}
 
+
+#set or reading warning
+SetHiSupTempWarn {out ".0121sHiSpTWn%+4.4d%0<sum8>"; in "#01210sHISpTWn%+5d%0<sum8>";}
+SetLowSupTempWarn {out ".0122sLoSpTWn%+4.4d%0<sum8>"; in "#01220sLoSpTWn%+5d%0<sum8>";}
+SetHiAmiTempWarn {out ".0123sHiAmTWn%+4.4d%0<sum8>"; in "#01230sHiAmTWn%+5d%0<sum8>";}
+SetLowAmiTempWarn {out ".0124sLoAmTWn%+4.4d%0<sum8>"; in "#01240sLoAmTWn%+5d%0<sum8>";}
+SetLowProFlowWarn {out ".0125sLoPFIWn%+4.4d%0<sum8>"; in "#01250sLoPFIWn%+5d%0<sum8>";}
+ReadHiSupTempWarn {out ".0134rHiSpTWn%0<sum8>"; in "#01340rHISpTWn%+5d%0<sum8>";}
+ReadLowSupTempWarn {out ".0135rLoSpTWn%0<sum8>"; in "#01350rLoSpTWn%+5d%0<sum8>";}
+ReadHiAmiTempWarn {out ".0136rHiAmTWn%0<sum8>"; in "#01360rHIAmTWn%+5d%0<sum8>";}
+ReadLowAmiTempWarn {out ".0137rLoAmTWn%0<sum8>"; in "#01370rLoAmTWn%+5d%0<sum8>";}
+ReadLowProFlowWarn {out ".0138rLoPFIWn%0<sum8>"; in "#01380rLoPFIWn%+5d%0<sum8>";}
+
+
+
