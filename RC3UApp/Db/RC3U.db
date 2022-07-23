@@ -182,6 +182,89 @@ record (longout, "$(P)SetControlTemp")
 			field(SCAN, "1 second")
 		}
 
+#Read Alarm State Level1
+record (mbbi, "$(P)ReadAlarmLevel1A0")
+		{
+			field(DTYP, "stream")
+			field(INP, "@RC3U.proto watchdog($(P)ReadAlarmLevel1A1, $(P)ReadAlarmLevel1A2, $(P)ReadAlarmLevel1A3,$(P)ReadAlarmLevel1A4,$(P)ReadAlarmLevel1A5) $(PORT)")
+			field(ZRVL, "0")
+			field(ONVL, "1")
+			field(TWVL, "2")
+			field(THVL, "3")
+			field(FRVL, "4")
+			field(FVVL, "5")
+			field(SXVL, "6")
+			field(SVVL, "7")
+			field(EIVL, "8")
+			field(NIVL, "9")
+			field(TEVL, "A")
+			field(ELVL, "B")
+			field(TVVL, "C")
+			field(TTVL, "D")
+			field(FTVL, "E")
+			field(FFVL, "F")
+			field(ZRST, "No Alarm")
+			field(ONST, "Ambient Temp Sensor Alarm")
+			field(TWST, "High Control Temp Alarm")
+			field(THST, "Ambient Temp Sensor, High Control Temp Alarm")
+			field(FRST, "PT7 High Temp Alarm")
+			field(FVST, "Ambient Temp Sensor, PT7 High Temp Alarm")
+			field(SXST, "High Control Temp, PT7 High Temp Alarm")
+			field(SVST, "Ambient Temp Sensor, High Control Temp, PT7 High Temp Alarm")
+			field(EIST, "Low Control Temp Alarm")
+			field(NIST, "Ambient Temp Sensor, Low Control Temp Alarm")
+			field(TEST, "High Control Temp, Low Control Temp Alarm")
+			field(ELST, "Ambient Temp Sensor, High Control Temp, Low Control Temp Alarm")
+			field(TVST, "PT7 High Temp, Low Control Temp Alarm")
+			field(TTST, "Ambient Temp Sensor, PT7 High Temp, Low Control Temp Alarm")
+			field(FTST, "High Control Temp, PT7 High Temp, Low Control Temp Alarm")
+			field(FFST, "Ambient Temp Sensor, High Control Temp, PT7 High Temp, Low Control Temp Alarm")
+			field(SCAN, "1 second")
+		}
+
+
+record (mbbi, "$(P)ReadAlarmLevel1A1")
+		{
+			field(ZRVL, "0")
+			field(ONVL, "1")
+			field(TWVL, "2")
+			field(THVL, "3")
+			field(FRVL, "4")
+			field(FVVL, "5")
+			field(SXVL, "6")
+			field(SVVL, "7")
+			field(EIVL, "8")
+			field(NIVL, "9")
+			field(TEVL, "A")
+			field(ELVL, "B")
+			field(TVVL, "C")
+			field(TTVL, "D")
+			field(FTVL, "E")
+			field(FFVL, "F")
+			field(ZRST, "No Alarm")
+			field(ONST, "Supply Temp Sensor Alarm")
+			field(TWST, "External RTD Sensor Alarm")
+			field(THST, "Supply Temp Sensor, External RTD Sensor Alarm")
+			field(FRST, "Return Temp Sensor Alarm")
+			field(FVST, "Supply Temp Sensor, Return Temp Sensor Alarm")
+			field(SXST, "External RTD Sensor, Return Temp Sensor Alarm")
+			field(SVST, "Supply Temp Sensor, External RTD Sensor, Return Temp Sensor Alarm")
+			field(EIST, "External Themistor Sensor Alarm")
+			field(NIST, "Supply Temp Sensor, External Themistor Sensor Alarm")
+			field(TEST, "External RTD Sensor, External Themistor Sensor Alarm")
+			field(ELST, "Supply Temp Sensor, External RTD Sensor, External Themistor Sensor Alarm")
+			field(TVST, "Return Temp Sensor, External Themistor Sensor Alarm")
+			field(TTST, "Supply Temp Sensor, Return Temp Sensor, External Themistor Sensor Alarm")
+			field(FTST, "External RTD Sensor, Return Temp Sensor, External Themistor Sensor Alarm")
+			field(FFST, "Supply Temp Sensor, External RTD Sensor, Return Temp Sensor, External Themistor Sensor Alarm")
+		}
+		
+
+#Read Alarm State Level2
+
+
+
+
 
 #Set and Read warning
 #Set Hi Supply Temp Warn
