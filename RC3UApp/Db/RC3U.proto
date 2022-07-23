@@ -13,6 +13,14 @@ ReadProcFlow_read {out ".0109rProsFlo%0<sum8>"; in "#01090rProsFlo%5d%0<sum8>";}
 SetChillerStatus {out ".0115sStatus_%1.1d%0<sum8>"; in "#01150sStatus_%1d%0<sum8>";}
 SetControlTemp {out ".0117sCtrlT__%+4.4d%0<sum8>"; in "#01170sCtrlT__%+5d%0<sum8>";}
 
+#Read Alarm State Level 1
+ReadAlarmLevel1 {out ".0118rAlrmLv1%0<sum8>"; in "#01180rAlrmLv1%0<sum8>";}
+
+
+#Read Alarm State Level 2
+ReadAlarmLevel21 {out ".0119rAlrmLv21%0<sum8>"; in "#01190rAlrmLv21%0<sum8>";}
+ReadAlarmLevel22 {out ".0119rAlrmLv22%0<sum8>"; in "#01190rAlrmLv22%0<sum8>";}
+
 
 #set or reading warning
 SetHiSupTempWarn {out ".0121sHiSpTWn%+4.4d%0<sum8>"; in "#01210sHISpTWn%+5d%0<sum8>";}
