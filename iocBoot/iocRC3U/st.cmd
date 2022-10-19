@@ -31,7 +31,7 @@ asynSetTraceMask("serial1",0,"ERROR|FLOW|DRIVER")
 
 
 dbLoadRecords("${TOP}/RC3UApp/Db/RC3U.db","P=$(PREFIX),PORT=serial1")
-dbLoadRecords("${TOP}/RC3UApp/Db/RC3U-1.db","P=$(PREFIX),PORT=serial1")
+#dbLoadRecords("${TOP}/RC3UApp/Db/RC3U-1.db","P=$(PREFIX),PORT=serial1")
 dbLoadRecords("$(AUTOSAVE)/db/save_restoreStatus.db", "P=SLAC:RC3U:")
 dbLoadRecords("$(ASYN)/db/asynRecord.db", "P=$(PREFIX),R=asyn1,PORT=serial1,ADDR=0,IMAX=80,OMAX=80")
 
