@@ -179,5 +179,4 @@ record (longout, "$(P)SetControlTemp")
 			field(DTYP, "stream")
 			field(OUT, "@RC3U.proto SetControlTemp $(PORT)")
 			field(EGU, "degC")
-			field(SCAN, "1 second")
 		}
