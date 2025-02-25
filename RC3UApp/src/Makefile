@@ -55,7 +55,6 @@ RC3U_DBD += drvAsynIPPort.dbd
 RC3U_DBD += calc.dbd
 RC3U_DBD += stream-scalcout.dbd
 RC3U_DBD += stream.dbd
-RC3U_DBD += as.dbd
 RC3U_DBD += asSupport.dbd
 # RC3U_registerRecordDeviceDriver.cpp derives from RC3U.dbd
 RC3U_SRCS += RC3U_registerRecordDeviceDriver.cpp
